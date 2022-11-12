@@ -7,5 +7,5 @@ class Post < ApplicationRecord
     has_rich_text :content
 
     # Adds comments
-    has_many :comments
+    has_many :comments, dependent: :destroy
 end
