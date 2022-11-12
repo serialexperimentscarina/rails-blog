@@ -1,12 +1,15 @@
 <div id="<%= dom_id post %>">
-  <p>
-    <strong>Title:</strong>
+  <h4>
     <%= post.title %>
+  </h4>
+
+  <p>
+    <!-- <strong>Content:</strong> -->
+    <%= post.content %>
   </p>
 
   <p>
-    <strong>Content:</strong>
-    <%= post.content %>
+    <small>Posted <%= time_ago_in_words(post.created_at) %> ago</small>
   </p>
 
 </div>
