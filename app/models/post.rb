@@ -1,7 +1,11 @@
 class Post < ApplicationRecord
-    # Add validations to the post
+    # Adds validations to the post
     validates_presence_of :title
     validates_presence_of :content
     
+    # Adds rich text to content
     has_rich_text :content
+
+    # Adds comments
+    has_many :comments
 end
