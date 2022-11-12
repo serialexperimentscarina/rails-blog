@@ -1,16 +1,16 @@
-<p style="color: green"><%= notice %></p>
-
 <h1>Posts</h1>
 
-<div id="posts">
+<div id="posts" class="mb-2">
   <% @posts.each do |post| %>
     <%= render post %>
     <p>
-      <%= link_to "Show this post", post %>
+      <%= link_to "Show this post" , post , class:"btn btn-light"%>
     </p>
+    <br/>
   <% end %>
 </div>
 
-<%= link_to "New post", new_post_path %>
-<br/><br/>
+<div class="mb-3">
+  <%= link_to "New post", new_post_path , class:"btn btn-outline-info"%>
+</div>
 

@@ -1,13 +1,13 @@
 <%= turbo_stream_from @post %>
 
-<p style="color: green"><%= notice %></p>
-
 <%= render @post %>
-<%= render "posts/comments", post: @post %>
+<div class="mb-3">
+  <%= render "posts/comments", post: @post %>
+</div>
 
-<div>
-  <%= link_to "Edit this post", edit_post_path(@post) %> |
-  <%= link_to "Back to posts", posts_path %>
-
-  <%= button_to "Destroy this post", @post, method: :delete %>
+<div class="mb-3">
+  <%= link_to "Edit this post", edit_post_path(@post) , class:"btn btn-light"%> |
+  <%= link_to "Back to posts", posts_path , class:"btn btn-light"%>
+  <br/><br/>
+  <%= button_to "Destroy this post", @post, method: :delete , class:"btn btn-danger"%>
 </div>

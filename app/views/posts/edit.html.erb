@@ -1,12 +1,10 @@
-<p style="color: green"><%= notice %></p>
-
 <h1>Editing post</h1>
 
 <%= render "form", post: @post %>
 
 <br>
 
-<div>
-  <%= link_to "Show this post", @post %> |
-  <%= link_to "Back to posts", posts_path %>
+<div class="mb-3">
+  <%= link_to "Show this post", @post , class:"btn btn-light"%> |
+  <%= link_to "Back to posts", posts_path , class:"btn btn-light"%>
 </div>
