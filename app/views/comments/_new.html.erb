@@ -1,5 +1,10 @@
 <%= form_with model: [ post, Comment.new ] do |form| %>
-    <%= form.text_area :content, size: "40x5" , class:"form-control", placeholder:"Post a new comment:"%>
-    <br/>
+    <div class="mb-2">
+        <%= form.text_area :content, size: "40x5" , class:"form-control", placeholder:"Post a new comment:"%>
+    </div>
+
+    <!--Pass current user id session to comment-->
+    <%= form.number_field :user_id , id: :comment_user_id, class:"form-control", value:current_user.id, type: :hidden %>
+
     <%= form.submit :Submit, class:"btn btn-outline-info"%>
 <% end %>
