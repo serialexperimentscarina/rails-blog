@@ -17,11 +17,22 @@
   </head>
 
   <body class="d-flex flex-column min-vh-100">
+    <!-- Render navigation bar -->
     <%= render 'home/navbar'%>
+    
     <div class="container">
       <br/>
+
+      <!-- Render notices and alerts -->
+      <% if notice %>
+        <%= render 'layouts/notices'%>
+      <% end %>
+      
+      <!-- Render views -->
       <%= yield %>
+
     </div>
+    <!-- Render footer -->
     <%= render 'home/footer'%>
 
     <!-- Include Bootstrap's JS -->
