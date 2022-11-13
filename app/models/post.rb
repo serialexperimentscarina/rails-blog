@@ -8,4 +8,7 @@ class Post < ApplicationRecord
 
     # Adds comments
     has_many :comments, dependent: :destroy
+
+    #Post belongs to an user
+    belongs_to :user
 end
