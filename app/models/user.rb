@@ -5,5 +5,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
          #User has many posts
-         has_many :posts
+         has_many :posts, dependent: :destroy
 end
