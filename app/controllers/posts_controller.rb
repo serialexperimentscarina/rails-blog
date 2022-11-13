@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
   before_action :set_post, only: %i[ show edit update destroy ]
   before_action :authenticate_user!, except: [:index, :show]
+  before_action :post_creator, only: [:edit, :update, :destroy]
 
   # GET /posts or /posts.json
   def index
@@ -55,6 +56,13 @@ class PostsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to posts_url, notice: "Post was successfully destroyed." }
       format.json { head :no_content }
+    end
+  end
+
+  # Allow only post's creator to perform certain actions
+  def post_creator
+    unless user_signed_in? && (current_user.id == @post.user_id)
+      redirect_to posts_path, notice: "You are not authorized to perform this action on another user's post."
     end
   end
 
