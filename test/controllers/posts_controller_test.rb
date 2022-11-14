@@ -1,6 +1,8 @@
 require "test_helper"
 
 class PostsControllerTest < ActionDispatch::IntegrationTest
+  include Devise::Test::IntegrationHelpers
+
   setup do
     @post = posts(:one)
   end
@@ -10,9 +12,17 @@ class PostsControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-  test "should get new" do
+  # A user should be able to create a post
+  test "user should get new" do
+    sign_in users(:one)
     get new_post_url
     assert_response :success
+  end
+
+  # A visitor should not be able to create a post
+  test "signed in should get new" do\
+    get new_post_url
+    assert_redirected_to new_user_session_url
   end
 
   test "should create post" do
