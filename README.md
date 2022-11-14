@@ -49,4 +49,10 @@ rails s
 
 Now, just visit 'localhost:3000' to see the application in action!
 
+## Tests
 
+To run test cases, use the following command:
+
+```bash
+rails test
+```
