@@ -21,9 +21,6 @@
     <%= form.rich_text_area :content, class:"form-control"%>
   </div>
 
-  <!--Pass current user id session to post-->
-  <%= form.number_field :user_id , id: :post_user_id, class:"form-control", value:current_user.id, type: :hidden %>
-
   <div>
     <%= form.submit :Submit, class:"btn btn-outline-info"%>
   </div>
