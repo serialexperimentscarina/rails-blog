@@ -2,7 +2,9 @@ class CommentsController < ApplicationController
     before_action :set_post
 
     def create
-        @post.comments.create! params.required(:comment).permit(:content, :user_id)
+        @comment = @post.comments.create(params[:comment].permit(:content))
+        @comment.user_id = current_user.id
+        @comment.save
         redirect_to @post
     end
 
