@@ -36,7 +36,7 @@ class PostsControllerTest < ActionDispatch::IntegrationTest
   end
 
   # A visitor should not be able to create a post
-  test "visitor should not create" do\
+  test "visitor should not create" do
     get new_post_url
     assert_redirected_to new_user_session_url
 
