@@ -1,24 +1,52 @@
-# README
+# Ruby on Rails Blog
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This application is a blog with user authentication built using the Ruby on Rails Framework and Bootstrap.
 
-Things you may want to cover:
+## Requirements
 
-* Ruby version
+The following are requirements to be able to build and run this application:
 
-* System dependencies
+ * Ruby 3.1.2
+ * Rails 7.0.4
 
-* Configuration
+## Building
 
-* Database creation
+The following are steps for building and running this application:
 
-* Database initialization
+#### 1. Clone the repository
 
-* How to run the test suite
+Run the following commands in your terminal:
 
-* Services (job queues, cache servers, search engines, etc.)
+```bash
+git clone git@github.com:serialexperimentscarina/rails-blog.git
+cd rails-blog
+```
 
-* Deployment instructions
+#### 2. Install dependencies
 
-* ...
+Run the following command to install all gem dependencies:
+
+```bash
+bundle install
+```
+
+#### 3. Create and initialize databases
+
+Run the following commands to set up the databases:
+
+```bash
+rails db:setup
+rails db:migrate
+```
+
+#### 4. Run the server
+
+Run the following command to start the server:
+
+```bash
+rails s
+```
+
+Now, just visit 'localhost:3000' to see the application in action!
+
+
