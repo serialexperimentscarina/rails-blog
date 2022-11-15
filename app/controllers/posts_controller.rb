@@ -1,6 +1,8 @@
 class PostsController < ApplicationController
   before_action :set_post, only: %i[ show edit update destroy ]
+  # Visitor will only be allowed to view posts
   before_action :authenticate_user!, except: [:index, :show]
+  # User will only be able to edit or delete own posts
   before_action :post_creator, only: [:edit, :update, :destroy]
 
   # GET /posts or /posts.json
