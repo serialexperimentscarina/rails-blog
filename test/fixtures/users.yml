@@ -1,10 +1,12 @@
 
 one:
   id: 1
+  username: user_one
   email: user1@email.com
   encrypted_password: <%= Devise::Encryptor.digest(User, '123456') %>
 
 two:
   id: 2
+  username: user_two
   email: user2@email.com
   encrypted_password: <%= Devise::Encryptor.digest(User, '123456') %>

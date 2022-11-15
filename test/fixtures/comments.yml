@@ -3,7 +3,9 @@
 one:
   post: one
   content: MyText
+  user_id: 1
 
 two:
   post: two
   content: MyText
+  user_id: 2
