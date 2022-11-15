@@ -9,6 +9,6 @@ class User < ApplicationRecord
          has_many :comments, dependent: :destroy
 
          # Validations for username
-         validates :username, presence: true, uniqueness: { case_sensitive: false }
+         validates :username, presence: true, uniqueness: { case_sensitive: false }, :length => {minimum: 5, maximum: 20 }
          validates_format_of :username, with: /^[a-zA-Z0-9_\.]*$/, :multiline => true
 end
